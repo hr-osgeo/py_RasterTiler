@@ -20,7 +20,7 @@ import math
 def main():
     # TODO -  cmd arguments
     inFile = 'data/croatia.mbtiles'
-    epsg = 3365
+    epsg = 3765
 
     inDS = gdal.Open(inFile)
     if inDS is None:
