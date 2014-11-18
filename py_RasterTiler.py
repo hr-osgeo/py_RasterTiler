@@ -55,7 +55,7 @@ def main():
     # Default number of segments
     segments = 2
     # Uncoment if you want run script in interactive mod
-    #segments = getNumberOfSegments(height_px, width_px)
+    segments = getNumberOfSegments(height_px, width_px)
 
     # -- Get output SRS
     SRS_out = osr.SpatialReference()
@@ -118,7 +118,7 @@ def main():
 
 def getNumberOfSegments(height_px,width_px):
     while True:
-        segments = raw_input( "Please set number of sections x and y axis" )
+        segments = raw_input( "Please set number of sections x and y axis: " )
         if segments.isdigit() == False:
             continue
             segments = raw_input( "Type a number!" )
@@ -128,7 +128,7 @@ def getNumberOfSegments(height_px,width_px):
         print 'OUTPUT TILE SIZE ', height_px / int(segments), ' X ', width_px / int(segments)
         print '**************************'
 
-        execute = raw_input( 'Number of tiles are ' + + 'Do you want to proceed? Y/N' )
+        execute = raw_input( 'Do you want to proceed? (Y/N) ' )
         if str(execute) == 'Y' or str(execute) == 'y':
             return segments
         else:
